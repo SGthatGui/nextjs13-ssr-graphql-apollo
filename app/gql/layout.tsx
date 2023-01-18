@@ -56,7 +56,6 @@ export default async function layout({
     })
     .then((res) => res.data.gen3_species) */
 
-  console.log(pokelist)
   return (
     <div>
       <aside>

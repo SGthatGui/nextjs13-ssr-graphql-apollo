@@ -33,38 +33,28 @@ const page = async ({ params }: { params: { [key: string]: string } }) => {
 
   return (
     <div>
-      <h1>gql single poke info component</h1>
-      {/* <section>
-        <h1>name: {poke.name}</h1>
-        <img src={poke.sprites.front_default} alt='' />
+      <section>
+        {/*   <h1>name: {char.name}</h1>
+        <img src={char.image} alt='character avatar ilustration' />
       </section>
       <section>
-        <p>weight: {poke.weight}</p>
-        <p>height: {poke.height}</p>
-        <p>base_experience: {poke.base_experience}</p>
-        {poke.stats.map((el: any) => (
-          <>
-            <p key={el.i}>
-              {el.stat.name}: {el.base_stat}
-            </p>
-          </>
-        ))}
-        <img src={poke.sprites.back_default} alt='' />
+        <h2>know stats</h2>
+        <p>species: {char.species}</p>
+        <p>gender: {char.gender}</p>
+        <p>type: {char.type}</p>
+        <p>origin: {char.origin.name}</p>
+        <p>status: {char.status}</p>
+        <p>last know location: {char.location.name}</p>
       </section>
+
       <section>
-        <h3>{poke.name} moves and attacks</h3>
-        <img src={poke.sprites.front_shiny} alt='' />
-
-        {poke.moves.map((el: any) => (
+        <h3>episodes</h3>
+        {char.episode.map((el: any, index: number) => (
           <>
-            <p key={el.move.name}>{el.move.name}</p>
-
-            <p>{el.move.url}</p>
+            <p key={index}>{el}</p>
           </>
-        ))}
-
-        <img src={poke.sprites.back_shiny} alt='' />
-      </section> */}
+        ))} */}
+      </section>
     </div>
   )
 }
