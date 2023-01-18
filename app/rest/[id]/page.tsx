@@ -13,6 +13,7 @@ const page = async ({ params }: { params: { [key: string]: string } }) => {
         <img src={char.image} alt='character avatar ilustration' />
       </section>
       <section>
+        <h2>know stats</h2>
         <p>species: {char.species}</p>
         <p>gender: {char.gender}</p>
         <p>type: {char.type}</p>
