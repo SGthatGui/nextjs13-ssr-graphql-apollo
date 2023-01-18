@@ -7,8 +7,13 @@ import {
   gql,
 } from '@apollo/client'
 
-const client = new ApolloClient({
+/* const client = new ApolloClient({
   uri: 'https://beta.pokeapi.co/graphql/v1beta',
+  cache: new InMemoryCache(),
+}) */
+
+const client = new ApolloClient({
+  uri: 'https://rickandmortyapi.com/graphql',
   cache: new InMemoryCache(),
 })
 
@@ -22,6 +27,23 @@ export default async function layout({
     .query({
       query: gql`
         {
+          characters(page: 1) {
+            info {
+              count
+            }
+            results {
+              name
+              id
+            }
+          }
+        }
+      `,
+    })
+    .then((res) => res.data.characters.results)
+
+  /* .query({
+      query: gql`
+        {
           gen3_species: pokemon_v2_pokemonspecies(
             limit: 69
             order_by: { name: asc }
@@ -32,8 +54,9 @@ export default async function layout({
         }
       `,
     })
-    .then((res) => res.data.gen3_species)
+    .then((res) => res.data.gen3_species) */
 
+  console.log(pokelist)
   return (
     <div>
       <aside>

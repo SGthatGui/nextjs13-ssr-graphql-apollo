@@ -1,7 +1,32 @@
 import React from 'react'
 import { useQuery, gql } from '@apollo/client'
 
-const getdata = gql``
+const getdata = gql`
+  {
+    character(id: 1) {
+      name
+      status
+      species
+      type
+      gender
+      origin {
+        id
+        name
+        dimension
+      }
+      location {
+        id
+        name
+        dimension
+      }
+      image
+      episode {
+        id
+        name
+      }
+    }
+  }
+`
 
 const page = async ({ params }: { params: { [key: string]: string } }) => {
   let pokename = params.id
