@@ -19,17 +19,14 @@ const page = async ({ params }: { params: { [key: string]: string } }) => {
         <p>type: {char.type}</p>
         <p>origin: {char.origin.name}</p>
         <p>status: {char.status}</p>
-      </section>
-      <section>
         <p>last know location: {char.location.name}</p>
       </section>
 
       <section>
         <h3>episodes</h3>
-
-        {char.episode.map((el: any) => (
+        {char.episode.map((el: any, index: number) => (
           <>
-            <p key={el.i}>{el}</p>
+            <p key={index}>{el}</p>
           </>
         ))}
       </section>
