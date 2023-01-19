@@ -1,48 +1,10 @@
 import React from 'react'
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  gql,
-} from '@apollo/client'
-
-const client = new ApolloClient({
-  uri: 'https://rickandmortyapi.com/graphql',
-  cache: new InMemoryCache(),
-})
-
-/* const getdata = gql`
-  {
-    character(id: 1) {
-      name
-      status
-      species
-      type
-      gender
-      origin {
-        id
-        name
-        dimension
-      }
-      location {
-        id
-        name
-        dimension
-      }
-      image
-      episode {
-        id
-        name
-      }
-    }
-  }
-` */
+import { rmclient } from '../../../lib/graphQLapi'
+import { gql } from '@apollo/client'
 
 const page = async ({ params }: { params: { [key: string]: string } }) => {
-  // let charid = params.id
-
   // section for await
-  const char = await client
+  const char = await rmclient
     .query({
       query: gql`
           {
