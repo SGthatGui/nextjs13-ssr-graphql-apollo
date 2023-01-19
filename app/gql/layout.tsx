@@ -67,7 +67,10 @@ export default async function layout({
           ))}
         </ul>
       </aside>
-      {/*  <ApolloProvider client={client}> */}
+      {/*  <ApolloProvider client={client}> 
+      because we are utilising react server components within nextjs13 ssr,
+      all components are stateless and hence we are not able to make use of ApolloProvider.
+      */}
       <section>{children}</section>
       {/*  </ApolloProvider> */}
     </div>
